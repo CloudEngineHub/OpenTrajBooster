@@ -17,7 +17,7 @@ This repository provides the official implementation of TrajBooster, featuring:
 - [ ] 🧠 **VLA model deployment**: Real-robot deployment implementation for Vision-Language-Action models (coming soon)
 - [ ] 📈 **Training scripts**: Retargeting model training code (coming soon)
 
-> **Note**: This repository builds upon our previous work at [WBC_Deploy](https://github.com/jiachengliu3/WBC_Deploy).
+> **Note**: This repository builds upon our previous work at [WBC_Deploy](https://github.com/jiachengliu3/WBC_Deploy). If you find this work useful for your research or projects, please consider giving both repositories a ⭐ **star** to support our ongoing open-source contributions to the robotics community!
 
 ## 🎯 Key Features
 
