@@ -17,7 +17,7 @@ This repository provides the official implementation of TrajBooster, featuring:
 - [ ] 🧠 **VLA model deployment**: Real-robot deployment implementation for Vision-Language-Action models (coming soon)
 - [ ] 📈 **Training scripts**: Retargeting model training code (coming soon)
 
-> **Note**: This repository builds upon our previous work at [WBC_Deploy](https://github.com/jiachengliu3/WBC_Deploy). If you find this work useful for your research or projects, please consider giving both repositories a ⭐ **star** to support our ongoing open-source contributions to the robotics community!
+> **Note**: This repository builds upon our previous work at [Open_WBC](https://github.com/jiachengliu3/WBC_Deploy). If you find this work useful for your research or projects, please consider giving both repositories a ⭐ **star** to support our ongoing open-source contributions to the robotics community!
 
 ## 🎯 Key Features
 
@@ -36,18 +36,18 @@ This repository provides the official implementation of TrajBooster, featuring:
 | **Paper** | Full technical details and evaluation | [📝 arXiv](https://arxiv.org/abs/2509.11839) |
 | **Base Code** | Underlying deployment framework | [🔗 WBC_Deploy](https://github.com/jiachengliu3/WBC_Deploy) |
 
-## 📖 Citation
+<!-- ## 📖 Citation
 
 If you find our work helpful, please consider citing:
 
 ```bibtex
-@article{liu2024trajbooster,
+@article{liu2025trajbooster,
   title={TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning},
   author={Liu, Jiacheng and Ding, Pengxiang and Zhou, Qihang and Wu, Yuxuan and Huang, Da and Peng, Zimian and Xiao, Wei and Zhang, Weinan and Yang, Lixin and Lu, Cewu and Wang, Donglin},
   journal={arXiv preprint arXiv:2509.11839},
   year={2025}
 }
-```
+``` -->
 
 <!-- ## 🙏 Acknowledgments
 
