@@ -13,7 +13,7 @@ This repository provides the official implementation of TrajBooster, featuring:
 - [x] 🤗 **35-hour retargeted dataset**: Unitree G1 whole-body manipulation actions retargeted from Agibot
 - [x] 🤗 **Pre-trained model checkpoint**: PPT_model ready for post-training with teleoperation data  
 - [x] 🤖 **Hardware deployment**: Complete setup and code for Unitree G1 robot
-- [ ] 🕹️ **Teleoperation system**: Real-robot teleoperation implementation and data collection pipeline (coming soon)
+- [x] 🕹️ **Teleoperation system**: Real-robot teleoperation implementation and data collection pipeline
 - [x] 🧠 **VLA model deployment**: Real-robot deployment implementation for Vision-Language-Action models
 - [ ] 📈 **Training scripts**: Retargeting model training code (coming soon)
 
