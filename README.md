@@ -14,7 +14,7 @@ This repository provides the official implementation of TrajBooster, featuring:
 - [x] 🤗 **Pre-trained model checkpoint**: PPT_model ready for post-training with teleoperation data  
 - [x] 🤖 **Hardware deployment**: Complete setup and code for Unitree G1 robot
 - [ ] 🕹️ **Teleoperation system**: Real-robot teleoperation implementation and data collection pipeline (coming soon)
-- [ ] 🧠 **VLA model deployment**: Real-robot deployment implementation for Vision-Language-Action models (coming soon)
+- [x] 🧠 **VLA model deployment**: Real-robot deployment implementation for Vision-Language-Action models
 - [ ] 📈 **Training scripts**: Retargeting model training code (coming soon)
 
 > **Note**: This repository builds upon our previous work at [Open_WBC](https://github.com/jiachengliu3/WBC_Deploy). If you find this work useful for your research or projects, please consider giving both repositories a ⭐ **star** to support our ongoing open-source contributions to the robotics community!
