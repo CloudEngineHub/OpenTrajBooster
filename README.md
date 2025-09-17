@@ -86,9 +86,17 @@ g1_deploy/
 - [ ] **Operator 2**: Responsive locomotion control (walking, squating)
 
 #### **📊 Data Processing**
+Follow setup instructions in `OpenWBC_to_Lerobot/README.md`
+
 Convert collected teleoperation data to LeRobot format:
+
 ```bash
-python convert_3views_to_lerobot.py
+python convert_3views_to_lerobot.py \
+    --input_dir /path/to/input \
+    --output_dir ./lerobot_dataset \
+    --dataset_name "YOUR_TASK" \
+    --robot_type "g1" \
+    --fps 30
 ```
 
 ---
