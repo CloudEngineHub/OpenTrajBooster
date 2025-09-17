@@ -132,7 +132,7 @@ cd unitree_sdk2/build/bin
 **C. Launch Policy Inference**
 ```bash
 # Terminal 3 (on Unitree G1) 
-python g1_gym_deploy/scripts/deploy_policy.py
+python g1_gym_deploy/scripts/deploy_policy_infer.py
 ```
 
 **D. Legs Activation**

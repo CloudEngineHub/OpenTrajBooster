@@ -144,7 +144,7 @@ class LCMAgent():
                     self.current_arm_command = np.atleast_1d(self.current_q_cmd['arm_action'][self.act_step])
                     self.current_base_command = np.atleast_1d(self.current_q_cmd['base_action'][self.act_step])
             self.act_step += 1
-            if self.act_step == 13:
+            if self.act_step == 14:
                 self.flag=1
             else:
                 self.flag=0
@@ -157,7 +157,7 @@ class LCMAgent():
 
             if self.current_q_cmd != self.prev_command:
                 print('Difference Reset')
-                self.act_step = 3
+                self.act_step = 2
 
             self.prev_command = self.current_q_cmd.copy()
             zmq_msg = f"infer_start {self.flag}"

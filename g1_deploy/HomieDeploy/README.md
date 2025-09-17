@@ -82,6 +82,7 @@ cd unitree_sdk2/build/bin && ./g1_control eth0 (or eth1)
 C. Run the inference thread to make policy control robot on `robot` (robot terminal 5):
 ```
 python g1_gym_deploy/scripts/deploy_policy.py
+python g1_gym_deploy/scripts/deploy_policy_infer.py
 ```
 D. After putting the robot on the ground, push the `R2` button of the joysticker, make the robot stand on the ground, and push `R2` again.
 

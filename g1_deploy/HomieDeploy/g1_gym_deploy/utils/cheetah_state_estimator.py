@@ -108,7 +108,7 @@ class StateEstimator:
         cmd_y = -0.5 * self.left_stick[0]
 
         cmd_yaw = -0.8 * self.right_stick[0]
-        cmd_height = 0.74 - 0.46 * self.right_stick[1]
+        cmd_height = 0.74 - 0.54 * self.right_stick[1]
         # cmd_height = 0.74 - 0.54 * self.right_stick[1]
 
         # if np.abs(cmd_x) < 0.1 and np.abs(cmd_y) < 0.1 and np.abs(cmd_yaw) < 0.1:
