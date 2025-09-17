@@ -155,17 +155,11 @@ python scripts/G1_inference.py \
   --filt
 ```
 
+## Bonus: Retargeting Model Training
 
-## 🎁 **Bonus: Retargeting Model Training**
 ### 🚧 *Coming Soon*
 
 Advanced retargeting model training scripts and comprehensive tutorials will be released shortly. Stay tuned for the complete training pipeline implementation.
-
-
-
-
-
-## Bonus: retargeting model 的训练 (coming soon)
 
 
 
