@@ -18,9 +18,6 @@ This repository provides the official implementation of TrajBooster, featuring:
 - [ ] 📈 **Training scripts**: Retargeting model training code (coming soon)
 - [ ] 📋 **Documentation Hub**: Comprehensive installation guides, deployment tutorials, and troubleshooting resources (coming soon)
 
----
-
-*All components are designed for seamless integration and production deployment.*
 
 > **Note**: This repository builds upon our previous work at [Open_WBC](https://github.com/jiachengliu3/WBC_Deploy). If you find this work useful for your research or projects, please consider giving both repositories a ⭐ **star** to support our ongoing open-source contributions to the robotics community!
 
