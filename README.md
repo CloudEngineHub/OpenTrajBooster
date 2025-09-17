@@ -1,6 +1,6 @@
 # TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning
 
-### 📝 [Paper](https://arxiv.org/abs/2509.11839) | 🌍 [Project Page](#) | 🤗 [Model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) | 🛢️ [Dataset](https://huggingface.co/datasets/l2aggle/Agibot2UnitreeG1Retarget)
+### 📝 [Paper](https://arxiv.org/pdf/2509.11839) | 🌍 [Project Page](https://jiachengliu3.github.io/TrajBooster/) | 🤗 [Model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) | 🛢️ [Dataset](https://huggingface.co/datasets/l2aggle/Agibot2UnitreeG1Retarget)
 
 ## Overview
 
