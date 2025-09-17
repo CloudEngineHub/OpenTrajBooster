@@ -34,6 +34,9 @@ This repository provides the official implementation of TrajBooster, featuring:
 
 ## 📋 **Deployment Guide**
 
+### 🚧 Notice
+This version is currently under testing. Features may be unstable.
+
 This comprehensive guide covers three essential deployment phases:
 
 1. **🕹️ Unitree G1 Teleoperation & Data Collection** - Complete setup and implementation
