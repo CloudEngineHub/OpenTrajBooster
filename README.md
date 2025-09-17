@@ -78,12 +78,12 @@ g1_deploy/
 
 **3. 🖐️ Upper-Body Control Setup**
 - Configure `avp_teleoperation` following `g1_deploy/avp_teleoperation/README.md`
-- **Dual Deployment**: Install on both local PC (image client) and G1 (image server)
+- **Dual Deployment**: Deploy on both local PC (image client) and G1 (image server)
 
 #### **✅ Verification Checklist**
 - [ ] **Operator 1**: Real-time first-person robot view in Apple Vision Pro
 - [ ] **Operator 1**: Smooth arm and hand control via AVP interface
-- [ ] **Operator 2**: Responsive locomotion control (walking, crouching)
+- [ ] **Operator 2**: Responsive locomotion control (walking, squating)
 
 #### **📊 Data Processing**
 Convert collected teleoperation data to LeRobot format:
