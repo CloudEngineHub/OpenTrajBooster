@@ -1,22 +1,22 @@
 <br>
 <p align="center">
-<h1 align="center"><strong>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit (Deployment)</strong></h1>
+<h1 align="center"><strong>TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning (Deployment)</strong></h1>
   <p align="center">
-    <a href='https://www.qingweiben.com' target='_blank'>Qingwei Ben*</a>, <a href='https://trap-1.github.io/' target='_blank'>Feiyu Jia*</a>, <a href='https://scholar.google.com/citations?user=kYrUfMoAAAAJ&hl=zh-CN' target='_blank'>Jia Zeng</a>, <a href='https://jtdong.com/' target='_blank'>Junting Dong</a>, <a href='https://dahua.site/' target='_blank'>Dahua Lin</a>, <a href='https://oceanpang.github.io/' target='_blank'>Jiangmiao Pang</a>
+    <a href='https://jiachengliu3.github.io/' target='_blank'>Jiacheng Liu*</a>, <a href='https://dingpx.github.io/' target='_blank'>Pengxiang Ding*</a>, <a href='https://github.com/litlewhitte/litlewhitte' target='_blank'>Qihang Zhou</a>, <a href='https://github.com/FurryGreen' target='_blank'>Yuxuan Wu</a>, <a href='https://github.com/HDDD16988/Introduction' target='_blank'>Da Huang</a>, <a href='https://github.com/JimmyPang02' target='_blank'>Zimian Peng</a>, <a href='https://xiaowei-i.github.io/' target='_blank'>Wei Xiao</a>, <a href='https://wnzhang.net/' target='_blank'>Weinan Zhang</a>, <a href='https://lixiny.github.io/' target='_blank'>Lixin Yang</a>, <a href='https://www.mvig.org/' target='_blank'>Cewu Lu† </a>, <a href='https://milab.westlake.edu.cn/' target='_blank'>Donglin Wang† </a>
     <br>
-    * Equal Controlbution
+    * Equal Controlbution, † Corresponding Authors 
     <br>
-    Shanghai Artificial Intelligence Laboratory & The Chinese University of Hong Kong
+    Zhejiang University, Westlake University, Shanghai Jiao Tong University & Shanghai Innovation Institute
     <br>
   </p>
 </p>
 
 <div id="top" align="center">
 
-[![arXiv](https://img.shields.io/badge/arXiv-2502.13013-orange)](https://arxiv.org/abs/2502.13013)
-[![](https://img.shields.io/badge/Project-%F0%9F%9A%80-pink)](https://homietele.github.io/)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.11839-orange)](https://arxiv.org/abs/2509.11839)
+[![](https://img.shields.io/badge/Project-%F0%9F%9A%80-pink)](https://jiachengliu3.github.io/TrajBooster/)
 
-<img src="./deploy.png" alt="cross" width="100%" style="position: relative;">
+<!-- <img src="./deploy.png" alt="cross" width="100%" style="position: relative;"> -->
 
 </div>
 
@@ -27,14 +27,12 @@
 - [📚 Usage](#-usage)
   - [Unitree G1](#unitree-g1)
   - [Deployment](#deployment)
-- [🔗 Citation](#-citation)
 - [📄 License](#-license)
 - [👏 Acknowledgements](#-acknowledgements)
-- [NOTE](#note)
 
 ## 🏠 Description
 <a name="-description"></a>
-This repository is an official implementation of the deployment of "HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit". It requires an `Unitree G1` with `Dex-3 hands` and a personal computer. All communications between the robot and the PC are via Wi-Fi. Our code is based on [Walk-These-Ways](https://github.com/Improbable-AI/walk-these-ways) and [Unitree SDK2](https://github.com/unitreerobotics/unitree_sdk2). Our [hardware system](https://github.com/OpenRobotLab/HomieHardware) is also open-sourced, you can first refer to it to reimplement the teleoperation system. Once you successfully build a system, you can follow the instructions in the [Usage](#-use). For simple usage of our cockpit, we just provide an example checkpoint named `deploy.onnx`.
+This repository is an official implementation of the deployment of "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning". It requires an `Unitree G1` with `Dex-3 hands` and a personal computer. All communications between the robot and the PC are via Wi-Fi. Our code is based on [Walk-These-Ways](https://github.com/Improbable-AI/walk-these-ways) and [Unitree SDK2](https://github.com/unitreerobotics/unitree_sdk2). Our [hardware system](https://github.com/jiachengliu3/OpenTrajBooster/tree/main/g1_deploy/Hardware) is also open-sourced, you can first refer to it to reimplement the teleoperation system. Once you successfully build a system, you can follow the instructions in the [Usage](#-use). For simple usage, we just provide an example checkpoint named `deploy.onnx`.
 
 ## 📚 Usage
 <a name="-use"></a>
@@ -63,7 +61,7 @@ cd g1_gym_deploy && pip install -e .
 ```
 
 ### Deployment
-**Before deployment, please run L1+A L2+R2 L2+A L2+B to close G1's initial control process, if successful, you will see the robot hang up its arm after L2+A and lose efforts after L2+B.**
+🎯 **Before deployment, please run L1+A L2+R2 L2+A L2+B to close G1's initial control process, if successful, you will see the robot hang up its arm after L2+A and lose efforts after L2+B.**
 
 For TCP communications, you should determine the IP address of your PC and robot by running:
 ```
@@ -71,24 +69,28 @@ ifconfig | grep inet
 ```
 Set the IP addresses in the code to the correct value.
 
-A. Run the hand control program on `robot` (robot terminal 3):
-```
-cd unitree_sdk2/build/bin && ./hand_control
-```
-B. Run the robot control program on `robot` (robot terminal 4):
+A. Run the robot control program on `robot` (robot terminal 2):
 ```
 cd unitree_sdk2/build/bin && ./g1_control eth0 (or eth1)
 ```
-C. Run the inference thread to make policy control robot on `robot` (robot terminal 5):
+B. Run the inference thread to make RL policy control robot on `robot` (robot terminal 3):
+
+ Please select **one** of the following control modes:
+
+1) For Teleoperation Mode:
 ```
-python g1_gym_deploy/scripts/deploy_policy.py
+python g1_gym_deploy/scripts/deploy_policy.py 
+```
+
+2) For Autonomous Control Mode:
+```
 python g1_gym_deploy/scripts/deploy_policy_infer.py
 ```
-D. After putting the robot on the ground, push the `R2` button of the joysticker, make the robot stand on the ground, and push `R2` again.
+C. After putting the robot on the ground, push the `R2` button of the joysticker, make the robot stand on the ground, and push `R2` again.
 
 ***NOTE:*** We strongly recommend you to really deploy the system after you really understand function of all files, otherwise there can be some troubles.
 
-## 🔗 Citation
+<!-- ## 🔗 Citation
 
 If you find our work helpful, please cite:
 
@@ -99,19 +101,20 @@ If you find our work helpful, please cite:
   journal={arXiv preprint arXiv:2502.13013},
   year={2025}
 }
-```
+``` -->
 
 </details>
 
 ## 📄 License
 
-All code of HOMIE is under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License </a><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>. It is strictly forbidden to use it for commercial purposes before asking our team.
+This project is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>.
+
 
 ## 👏 Acknowledgements
 
 
 - [Walk-These-Ways](https://github.com/leggedrobotics/rsl_rl): Our robot deployment code is based on `walk-these-ways`.
-- [Unitree SDK2](https://github.com/leggedrobotics/rsl_rl): We use `Unitree SDK2` library to control the robot.
+- [Unitree SDK2](https://github.com/unitreerobotics/unitree_sdk2): We use `Unitree SDK2` library to control the robot.
+- [OpenHomie](https://github.com/InternRobotics/OpenHomie): This work is developed based on `OpenHomie` codebase.
 
-## NOTE
-Here we only include the g1 policy deployment code of HOMIE. If you want to have access to the full code, please enter the form [here](https://docs.google.com/forms/d/e/1FAIpQLSeETDUR9w7qkWpIgSPwpT6408cPDgaNUYhDZUeUm3qMdk2L9w/viewform?usp=header).
+
