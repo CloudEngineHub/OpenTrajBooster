@@ -43,7 +43,7 @@ This comprehensive guide covers three essential deployment phases:
 2. **🎯 Post-Training Pipeline** - Utilizing collected data for VLA model fine-tuning  
 3. **🤖 Autonomous Deployment** - Real-robot manipulation using post-trained VLA models
 
-> **💡 Quick Start**: We provide a [pre-trained PPT model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) for immediate deployment. Follow the sequential steps below for complete project reproduction.
+> **💡 Quick Start**: We provide a [PPT (Post-Pre-Trained) model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) for immediate deployment. Follow the sequential steps below for complete project reproduction.
 
 > **🔬 Advanced Users**: Interested in retargeting model training? Jump directly to [Bonus: Retargeting Model Training](#bonus-retargeting-model-training)
 
