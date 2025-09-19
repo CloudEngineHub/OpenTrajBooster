@@ -615,16 +615,60 @@ class LeRobotSingleDataset(Dataset):
             else:
                 raise ValueError(f"Invalid padding strategy: {padding_strategy}")
         return output
-
+    
     def get_video_path(self, trajectory_id: int, key: str) -> Path:
+        # 获取 episode_chunk
         chunk_index = self.get_episode_chunk(trajectory_id)
-        original_key = self.lerobot_modality_meta.video[key].original_key
+        
+        # 安全获取 original_key
+        original_key = getattr(self.lerobot_modality_meta.video[key], "original_key", None)
         if original_key is None:
             original_key = key
-        video_filename = self.video_path_pattern.format(
-            episode_chunk=chunk_index, episode_index=trajectory_id, video_key=original_key
-        )
+
+        # 判断 video_path_pattern 类型
+        if isinstance(self.video_path_pattern, dict):
+            # 先尝试直接用 original_key
+            video_template = self.video_path_pattern.get(original_key)
+            
+            # 如果没匹配上，尝试取扩展名匹配
+            if video_template is None and "." in original_key:
+                ext_key = original_key.split(".")[-1]
+                video_template = self.video_path_pattern.get(ext_key)
+
+            if video_template is None:
+                raise KeyError(
+                    f"Invalid video_key '{original_key}' not found in video_path_pattern keys: {list(self.video_path_pattern.keys())}"
+                )
+            
+            # 格式化路径（字典模板不需要 video_key）
+            video_filename = video_template.format(
+                episode_chunk=chunk_index,
+                episode_index=trajectory_id
+            )
+        
+        elif isinstance(self.video_path_pattern, str):
+            # 字符串模板直接带 video_key
+            video_filename = self.video_path_pattern.format(
+                episode_chunk=chunk_index,
+                episode_index=trajectory_id,
+                video_key=original_key
+            )
+        
+        else:
+            raise TypeError("video_path_pattern must be either a string or a dict.")
+
         return self.dataset_path / video_filename
+
+
+    # def get_video_path(self, trajectory_id: int, key: str) -> Path:
+    #     chunk_index = self.get_episode_chunk(trajectory_id)
+    #     original_key = self.lerobot_modality_meta.video[key].original_key
+    #     if original_key is None:
+    #         original_key = key
+    #     video_filename = self.video_path_pattern.format(
+    #         episode_chunk=chunk_index, episode_index=trajectory_id, video_key=original_key
+    #     )
+    #     return self.dataset_path / video_filename
 
     def get_video(
         self,
