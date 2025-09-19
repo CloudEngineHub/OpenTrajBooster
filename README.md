@@ -16,7 +16,7 @@ This repository provides the official implementation of TrajBooster, featuring:
 - [x] 🕹️ **Teleoperation system**: Real-robot teleoperation implementation and data collection pipeline
 - [x] 🧠 **VLA model deployment**: Real-robot deployment implementation for Vision-Language-Action models
 - [ ] 📈 **Training scripts**: Retargeting model training code (coming soon)
-- [ ] 📋 **Documentation Hub**: Comprehensive installation guides, deployment tutorials, and troubleshooting resources (coming soon)
+- [x] 📋 **Documentation Hub**: Comprehensive installation guides, deployment tutorials, and troubleshooting resources 
 
 
 > **Note**: This repository builds upon our previous work at [OpenWBC](https://github.com/jiachengliu3/WBC_Deploy). If you find this work useful for your research or projects, please consider giving both repositories a ⭐ **star** to support our ongoing open-source contributions to the robotics community!
@@ -76,20 +76,47 @@ g1_deploy/
 
 **2. 🦵 Lower-Body Control Configuration**
 - Deploy `g1_deploy/HomieDeploy/` to Unitree G1 onboard computer
-- Follow setup instructions in `g1_deploy/HomieDeploy/README.md`
+- Follow setup instructions in [`g1_deploy/HomieDeploy/README.md`](g1_deploy/HomieDeploy/README.md)
 - **Result**: Enable joystick-based teleoperation for locomotion
 
+
+
 **3. 🖐️ Upper-Body Control Setup**
-- Configure `avp_teleoperation` following `g1_deploy/avp_teleoperation/README.md`
-- **Dual Deployment**: Deploy on both local PC (image client) and G1 (image server)
+
+- **Configure AVP Teleoperation**: Set up `avp_teleoperation` following the instructions in [`g1_deploy/avp_teleoperate/README.md`](g1_deploy/avp_teleoperate/README.md). Configure the `tv` conda environment and set up the required certificates.
+
+- **Dual Deployment**: Deploy the system on both your local PC (image client) and the G1 robot (image server).
+
+  **On the Unitree robot terminal**, run:
+  ```bash
+  cd avp_teleoperate/teleop/
+  python image_server/image_server.py
+  ```
+  
+  **On your PC**, run:
+  ```bash
+  cd avp_teleoperate/teleop/
+  python image_server/image_client.py
+  ```
+  
+  If you can see the video feed properly, the setup is working correctly. You can then **close** the `image_client` program and proceed with the following operations.
+
+- **Collect Teleoperation Data (On Your PC)**:
+  ```bash
+  (tv) unitree@Host:~/avp_teleoperate/teleop$ python teleop_data_collecting.py --arm=G1_29 --hand=dex3  --task_dir='./utils/data'  --record 
+  ```
+  
+  Follow the interaction methods described in [`g1_deploy/avp_teleoperate/README.md`](g1_deploy/avp_teleoperate/README.md) to have the operator perform corresponding interactions using the Apple Vision Pro headset.
+
 
 #### **✅ Verification Checklist**
-- [ ] **Operator 1**: Real-time first-person robot view in Apple Vision Pro
-- [ ] **Operator 1**: Smooth arm and hand control via AVP interface
-- [ ] **Operator 2**: Responsive locomotion control (walking, squating)
+- [x] **Operator 1**: Real-time first-person robot view in Apple Vision Pro
+- [x] **Operator 1**: Smooth arm and hand control via AVP interface
+- [x] **Operator 2**: Responsive locomotion control (walking, squating)
+
 
 #### **📊 Data Processing**
-Follow setup instructions in `OpenWBC_to_Lerobot/README.md`
+Follow setup instructions in [`OpenWBC_to_Lerobot/README.md`](OpenWBC_to_Lerobot/README.md)
 
 Convert collected teleoperation data to LeRobot format:
 
@@ -108,9 +135,9 @@ python convert_3views_to_lerobot.py \
 
 Utilize your collected and processed teleoperation data for model fine-tuning:
 
-📖 **Detailed Instructions**: `VLA_model/gr00t_modified_for_OpenWBC/README.md`
+📖 **Detailed Instructions**: [`VLA_model/gr00t_modified_for_OpenWBC/README.md`](VLA_model/gr00t_modified_for_OpenWBC/README.md)
 
-**Training Pipeline**: Post-train our [PPT Model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) with your domain-specific data
+**Training Pipeline**: Post-train our [PPT (Post-Pre-Trained) Model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) with your domain-specific data
 
 ---
 
