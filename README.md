@@ -2,6 +2,10 @@
 
 ### 📝 [Paper](https://arxiv.org/pdf/2509.11839) | 🌍 [Project Page](https://jiachengliu3.github.io/TrajBooster/) | 🤗 [Model](https://huggingface.co/l2aggle/PPTmodel4UnitreeG1) | 🛢️ [Dataset](https://huggingface.co/datasets/l2aggle/Agibot2UnitreeG1Retarget)
 
+<p align="center">
+  <img src="assets/teaser.gif" alt="TrajBooster Demo" width="100%">
+</p>
+
 ## Overview
 
 TrajBooster leverages abundant existing robot manipulation datasets to enhance humanoid whole-body manipulation capabilities. Our approach retargets end-effector trajectories from diverse robots to target humanoids using a specialized retargeting model. We then perform post-pre-training on a pre-trained Vision-Language-Action (VLA) model with this retargeted data, followed by fine-tuning with minimal real-world data. This methodology significantly reduces the burden of human teleoperation while improving action space comprehension and zero-shot skill transfer capabilities.
@@ -211,22 +215,21 @@ Advanced retargeting model training scripts and comprehensive tutorials will be 
 | **Paper** | Full technical details and evaluation | [📝 arXiv](https://arxiv.org/abs/2509.11839) |
 | **Base Code** | Underlying deployment framework | [🔗 WBC_Deploy](https://github.com/jiachengliu3/WBC_Deploy) |
 
-<!-- ## 📖 Citation
+## 📖 Citation
 
 If you find our work helpful, please consider citing:
 
 ```bibtex
 @article{liu2025trajbooster,
   title={TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning},
-  author={Liu, Jiacheng and Ding, Pengxiang and Zhou, Qihang and Wu, Yuxuan and Huang, Da and Peng, Zimian and Xiao, Wei and Zhang, Weinan and Yang, Lixin and Lu, Cewu and Wang, Donglin},
+  author={Liu, Jiacheng and Ding, Pengxiang and Zhou, Qihang and Wu, Yuxuan and Huang, Da and Peng, Zimian and Xiao, Wei and Zhang, Weinan and Yang, Lixin and Lu, Cewu and others},
   journal={arXiv preprint arXiv:2509.11839},
   year={2025}
 }
-``` -->
+```
+## 🙏 Acknowledgments
 
-<!-- ## 🙏 Acknowledgments
-
-We thank the open-source robotics community and all contributors who made this work possible. -->
+We thank the open-source robotics community and all contributors who made this work possible.
 
 
 

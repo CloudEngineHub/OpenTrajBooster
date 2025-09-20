@@ -27,6 +27,7 @@
 - [📚 Usage](#-usage)
   - [Unitree G1](#unitree-g1)
   - [Deployment](#deployment)
+- [� Citation](#-citation)
 - [📄 License](#-license)
 - [👏 Acknowledgements](#-acknowledgements)
 
@@ -90,18 +91,18 @@ C. After putting the robot on the ground, push the `R2` button of the joysticker
 
 ***NOTE:*** We strongly recommend you to really deploy the system after you really understand function of all files, otherwise there can be some troubles.
 
-<!-- ## 🔗 Citation
+## 🔗 Citation
 
 If you find our work helpful, please cite:
 
 ```bibtex
-@article{ben2025homie,
-  title={HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit},
-  author={Ben, Qingwei and Jia, Feiyu and Zeng, Jia and Dong, Junting and Lin, Dahua and Pang, Jiangmiao},
-  journal={arXiv preprint arXiv:2502.13013},
+@article{liu2025trajbooster,
+  title={TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning},
+  author={Liu, Jiacheng and Ding, Pengxiang and Zhou, Qihang and Wu, Yuxuan and Huang, Da and Peng, Zimian and Xiao, Wei and Zhang, Weinan and Yang, Lixin and Lu, Cewu and others},
+  journal={arXiv preprint arXiv:2509.11839},
   year={2025}
 }
-``` -->
+```
 
 </details>
 
