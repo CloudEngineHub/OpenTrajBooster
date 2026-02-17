@@ -6,6 +6,10 @@
   <img src="assets/teaser.gif" alt="TrajBooster Demo" width="100%">
 </p>
 
+## 🔥🔥 News
+
+- (🔥 New) [2026/02/01] **TrajBooster is accepted by ICRA-2026.** 🎉🎉🎉
+
 ## Overview
 
 TrajBooster leverages abundant existing robot manipulation datasets to enhance humanoid whole-body manipulation capabilities. Our approach retargets end-effector trajectories from diverse robots to target humanoids using a specialized retargeting model. We then perform post-pre-training on a pre-trained Vision-Language-Action (VLA) model with this retargeted data, followed by fine-tuning with minimal real-world data. This methodology significantly reduces the burden of human teleoperation while improving action space comprehension and zero-shot skill transfer capabilities.
